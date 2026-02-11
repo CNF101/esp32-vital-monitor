@@ -37,11 +37,12 @@ the results live on screen.
   All devices communicate using I2C.
 
  
-- Nano ESP32   -   MAX30102   -   OLED
-3V3          -   VDD        -   VDD
-GND          -   GND        -   GND
-A4           -   SDA        -   SDA
-A5           -   SCL        -   SCL
+| Nano ESP32 | MAX30102 | OLED |
+|------------|----------|------|
+| 3V3 | VDD | VDD |
+| GND | GND | GND |
+| A4 | SDA | SDA |
+| A5 | SCL | SCL |
 
 
 ------------------------------------------------------------------------
