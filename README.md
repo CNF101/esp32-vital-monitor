@@ -1,89 +1,112 @@
-# ESP32 Vital Monitor
+# Vital Monitor
 
-Real time heart rate and blood oxygen monitor built using an Arduino Nano ESP32, MAX30102 optical sensor, and SSD1309 OLED display.
+A fingertip heart rate and blood oxygen monitor built with an Arduino
+Nano ESP32, MAX30102 optical sensor, and SSD1309 OLED display.
 
-This project reads pulse signals from a fingertip, detects heart beats, computes beats per minute, estimates oxygen saturation, and presents results on a live screen.
+The system samples infrared and red light, detects pulse peaks,
+calculates beats per minute, estimates oxygen saturation, and presents
+the results live on screen.
 
-Designed as a foundation for future wearable and connected health systems.
+------------------------------------------------------------------------
 
-⸻
+## What the device does
 
-Features
-	•	Real time BPM detection
-	•	SpO₂ estimation
-	•	Finger presence detection
-	•	Signal filtering and smoothing
-	•	I2C sensor communication
-	•	OLED user interface
-	•	Modular firmware design
+-   Detects if a finger is present
+-   Measures heart beats from blood volume changes
+-   Calculates BPM from beat intervals
+-   Estimates SpO₂ using red to infrared ratios
+-   Displays information on an OLED
+-   Continuously updates while the finger remains in place
 
-⸻
+------------------------------------------------------------------------
 
-Hardware Used
-	•	Arduino Nano ESP32
-	•	MAX30102 pulse oximeter
-	•	SSD1309 128x64 I2C OLED
-	•	Breadboard
-	•	Jumper wires
-	•	USB power
+## Hardware
 
-⸻
+-   Arduino Nano ESP32
+-   MAX30102 pulse oximeter sensor
+-   SSD1309 I2C OLED display
+-   Breadboard
+-   Jumper wires
+-   USB-C cable
+-   Power Bank
 
-Wiring
+------------------------------------------------------------------------
 
-Nano ESP32	MAX30102	OLED
-3V3	VDD	VDD
-GND	GND	GND
-A4	SDA	SDA
-A5	SCL	SCL
+## Wiring
 
+  All devices communicate using I2C.
 
-⸻
+  Nano ESP32   MAX30102   OLED
+  ------------ ---------- ------
+  3V3          VDD        VDD
+  GND          GND        GND
+  A4           SDA        SDA
+  A5           SCL        SCL
 
-System Diagram
+------------------------------------------------------------------------
 
+## Libraries Required
 
-⸻
+Install from the Arduino Library Manager.
 
-Real Build
+-   U8g2
+-   SparkFun MAX3010x
+-   heartRate
 
+------------------------------------------------------------------------
 
-⸻
+## How to run
 
-How It Works
+1.  Wire the hardware according to the table
+2.  Connect USB
+3.  Open the `.ino` file
+4.  Select **Arduino Nano ESP32** as the board
+5.  Upload\
+6.  Open Serial Monitor if debugging
+7.  Place your finger on the sensor
 
-The MAX30102 emits red and infrared light into the finger.
-Reflected intensity changes with blood volume.
+------------------------------------------------------------------------
 
-The firmware:
-	1.	Detects peaks in the IR waveform
-	2.	Measures time between beats
-	3.	Converts interval into BPM
-	4.	Computes red to infrared ratio
-	5.	Estimates oxygen saturation
+## Display behavior
 
-Results update on the OLED in real time.
+**No finger**\
+The screen prompts the user to place a finger.
 
-⸻
+**Finger detected**\
+BPM begins calculating.\
+SpO₂ stabilizes after a short averaging window.\
+Values refresh continuously.
 
-Running the Project
-	1.	Connect hardware according to wiring table
-	2.	Open the Arduino sketch
-	3.	Select Arduino Nano ESP32
-	4.	Upload
-	5.	Place finger on sensor
+------------------------------------------------------------------------
 
-⸻
+## Measurement method
 
-Future Improvements
-	•	Bluetooth streaming
-	•	Mobile app integration
-	•	Data logging
-	•	Battery operation
-	•	Custom enclosure
+Heart rate is derived from peak detection on the infrared waveform.
 
-⸻
+SpO₂ is estimated by comparing AC and DC components of red and infrared
+light absorption.
 
-License
+Filtering reduces noise and motion artifacts.
+
+------------------------------------------------------------------------
+
+## Limitations
+
+This project is a prototype for learning and experimentation.\
+It is not a certified medical device.
+
+------------------------------------------------------------------------
+
+## Future possible improvements
+
+-   Wireless data transmission\
+-   Mobile or web dashboard\
+-   Historical logging\
+-   Battery operation\
+-   Custom enclosure
+
+------------------------------------------------------------------------
+
+## License
 
 MIT
