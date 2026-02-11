@@ -36,12 +36,13 @@ the results live on screen.
 
   All devices communicate using I2C.
 
-  Nano ESP32   MAX30102   OLED
-  ------------ ---------- ------
-  3V3          VDD        VDD
-  GND          GND        GND
-  A4           SDA        SDA
-  A5           SCL        SCL
+ 
+- Nano ESP32   -   MAX30102   -   OLED
+3V3          -   VDD        -   VDD
+GND          -   GND        -   GND
+A4           -   SDA        -   SDA
+A5           -   SCL        -   SCL
+
 
 ------------------------------------------------------------------------
 
@@ -56,12 +57,12 @@ Install from the Arduino Library Manager.
 ------------------------------------------------------------------------
 
 ## How to run
-
+0.  Download Arduino IDE
 1.  Wire the hardware according to the table
-2.  Connect USB
+2.  Connect USB-C
 3.  Open the `.ino` file
-4.  Select **Arduino Nano ESP32** as the board
-5.  Upload\
+4.  Select **Arduino Nano ESP32** as the board and select the port you use
+5.  Upload
 6.  Open Serial Monitor if debugging
 7.  Place your finger on the sensor
 
@@ -92,17 +93,17 @@ Filtering reduces noise and motion artifacts.
 
 ## Limitations
 
-This project is a prototype for learning and experimentation.\
-It is not a certified medical device.
+This project is a prototype for learning and experimentation.
+**It is not a certified medical device.**
 
 ------------------------------------------------------------------------
 
 ## Future possible improvements
 
--   Wireless data transmission\
--   Mobile or web dashboard\
--   Historical logging\
--   Battery operation\
+-   Bluetooth or WiFi data streaming capable due to ESP32
+-   Mobile or web dashboard
+-   Historical logging
+-   Battery operation
 -   Custom enclosure
 
 ------------------------------------------------------------------------
