@@ -4,6 +4,10 @@ A fingertip heart rate and blood oxygen monitor built with an Arduino Nano ESP32
 
 The system samples infrared and red light at 400Hz, detects pulse peaks in real-time, calculates beats per minute using a moving average, estimates oxygen saturation using the Maxim algorithm, and presents live results on a crisp OLED screen with animated indicators.
 
+## DEMO Video
+[Watch the device operate live](https://youtu.be/LqUBv6KlVoA)
+
+
 ## What the device does
 
 * **Finger detection** - Automatically detects when a finger is placed on the sensor
