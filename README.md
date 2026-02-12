@@ -24,7 +24,7 @@ the results live on screen.
 
 -   Arduino Nano ESP32
 -   MAX30102 pulse oximeter sensor
--   SSD1309 I2C OLED display
+-   SSD1309 128x64 2.42 inch I2C OLED display
 -   Breadboard
 -   Jumper wires
 -   USB-C cable
