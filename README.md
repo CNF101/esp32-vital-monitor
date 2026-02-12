@@ -61,7 +61,7 @@ Install these from the Arduino Library Manager:
 7. Select the correct port (Tools → Port)
 8. Click **Upload**
 9. Open **Serial Monitor** (Tools → Serial Monitor, 115200 baud) for debug output
-10. Place your finger **firmly** on the sensor and wait 5-10 seconds for measurements to stabilize
+10. Place your finger **firmly** on the sensor and wait 5-20 seconds for measurements to stabilize
 
 ## Display behavior
 
