@@ -15,7 +15,7 @@ U8G2_SSD1309_128X64_NONAME0_1_HW_I2C u8g2(U8G2_R0, U8X8_PIN_NONE);
 // ========================================
 const int      DRAW_INTERVAL    = 100;
 const uint32_t FINGER_THRESHOLD = 50000;
-const unsigned long SPO2_UPDATE_INTERVAL = 3000; // Update SpO2 every 3 seconds
+const unsigned long SPO2_UPDATE_INTERVAL = 3000;
 
 // ========================================
 // HEARTBEAT Variables
@@ -174,7 +174,6 @@ void loop() {
 
   // ---- CALCULATING: blocking — force display refresh first ----
   if (spo2State == CALCULATING) {
-    // Don't render here - let it happen naturally in the display refresh cycle
     maxim_heart_rate_and_oxygen_saturation(
       irBuffer, bufferLength, redBuffer,
       &spo2, &validSPO2,
@@ -198,7 +197,6 @@ void loop() {
   }
 
   // ========================================================
-  // READ SENSOR SAMPLE
   // Use check()/available()/nextSample() for the SpO2 buffer.
   // Also call getIR() for checkForBeat() using uint32_t —
   // CRITICAL on ESP32: must be uint32_t, not long, because
