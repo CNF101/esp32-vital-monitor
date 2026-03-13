@@ -200,7 +200,7 @@ void loop() {
   // Use check()/available()/nextSample() for the SpO2 buffer.
   // Also call getIR() for checkForBeat() using uint32_t —
   // CRITICAL on ESP32: must be uint32_t, not long, because
-  // checkForBeat() does bit-level math that breaks with signed types.
+  // checkForBeat() does bit-level math that breaks with signed types
   // ========================================================
   particleSensor.check();
   if (!particleSensor.available()) return;
