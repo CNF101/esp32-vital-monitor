@@ -127,7 +127,7 @@ void setup() {
   // CRITICAL for checkForBeat() — at sampleRate=100 you only get 25sps
   // which is ~1 sample per heartbeat peak and detection always fails.
   // At 400sps / avg4 = 100sps you get ~5 samples per peak — works reliably.
-  // SpO2 still works: Maxim algorithm just needs 100 consistent samples.
+  // SpO2 still works: Maxim algorithm just needs 100 consistent samples
   particleSensor.setup(
     60,    // ledBrightness
     4,     // sampleAverage
